@@ -29,6 +29,12 @@ def check_bound(obj_rct: pg.rect) -> tuple[bool, bool]:
     return yoko,tate
     
 def gameover(screen):
+    """
+    ゲームオーバー時の処理
+    引数:screen
+    戻り値:無し
+    背景をブラックアウト、GameOverの文字を中心に、その上に泣いているこうかとんの画像を配置
+    """
     black= pg.Surface((WIDTH,HEIGHT))
     pg.draw.rect(black,(0,0,0),(0,0,WIDTH,HEIGHT))
     black.set_alpha(100)
