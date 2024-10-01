@@ -27,6 +27,18 @@ def check_bound(obj_rct: pg.rect) -> tuple[bool, bool]:
     
     return yoko,tate
 
+def end():
+    """
+    """
+    fonto = pg.font.Font(None,80)
+    txt = fonto.render("GameOver",
+                True,(0, 0, 0))
+    
+    return txt
+
+    
+    
+
 def main():
     pg.display.set_caption("逃げろ！こうかとん")
     screen = pg.display.set_mode((WIDTH, HEIGHT))
@@ -80,6 +92,8 @@ def main():
         if not tate:
             vy *= -1
         screen.blit(bb_img, bb_rct)
+        if kk_rct.colliderect(bb_rct) == True:
+            return
         pg.display.update()
         tmr += 1
         clock.tick(50)
